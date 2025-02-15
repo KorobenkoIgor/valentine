@@ -1,0 +1,235 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    background: linear-gradient(45deg, #ff99cc, #ff66b2, #ff33cc); /* Мягкий градиент на фоне */
+    animation: backgroundAnimation 10s ease-in-out infinite; /* Анимация плавного изменения фона */
+    transition: background 1s ease-in-out; /* Плавный переход фона */
+}
+
+/* Анимация фона */
+@keyframes backgroundAnimation {
+    0% { background: linear-gradient(45deg, #ff99cc, #ff66b2, #ff33cc); }
+    50% { background: linear-gradient(45deg, #ff66b2, #ff33cc, #ff99cc); }
+    100% { background: linear-gradient(45deg, #ff99cc, #ff66b2, #ff33cc); }
+}
+
+.container {
+    padding: 50px;
+    background-color: rgba(255, 102, 178, 0.9); /* Прозрачный фон для контейнера */
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    margin: 50px auto;
+    position: relative;
+    z-index: 1; /* Контейнер текста будет на переднем плане */
+    animation: fadeIn 2s ease-out;
+    transition: background-color 1s ease-in-out, box-shadow 1s ease-in-out; /* Плавные переходы для фона и теней */
+}
+
+/* Плавное изменение фона и тени при наведении */
+.container:hover {
+    background-color: rgba(255, 102, 178, 1);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Анимация появления контейнера */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #ffccff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Легкая тень для текста */
+    animation: glowText 2s infinite alternate; /* Анимация свечения текста */
+    transition: color 1s ease-in-out, text-shadow 1s ease-in-out; /* Плавное изменение цвета и тени */
+}
+
+/* Анимация свечения текста */
+@keyframes glowText {
+    0% { text-shadow: 0 0 10px #ffccff, 0 0 20px #ff66b2, 0 0 30px #ff33cc; }
+    100% { text-shadow: 0 0 20px #ffccff, 0 0 30px #ff66b2, 0 0 40px #ff33cc; }
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.5;
+    animation: fadeIn 2s ease-out;
+    transition: color 1s ease-in-out; /* Плавное изменение цвета текста */
+}
+
+/* Плавное изменение цвета сердец */
+.heart {
+    color: #ff0000;
+    font-size: 40px;
+    margin: 20px 0;
+    animation: bounce 1s infinite;
+    transition: color 1s ease-in-out; /* Плавное изменение цвета */
+}
+
+/* Анимация подпрыгивания сердец */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Стили для футера */
+.footer {
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: 30px;
+    background-color: rgba(255, 102, 178, 0.9); /* Прозрачный фон */
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 600px;
+    margin: 30px auto;
+    transition: background-color 1s ease-in-out; /* Плавное изменение фона футера */
+}
+
+/* Контейнер для анимации сердец */
+.heart-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%; /* Ширина контейнера будет на 100% экрана */
+    height: 100%; /* Высота контейнера будет на 100% экрана */
+    transform: translate(-50%, -50%); /* Центрируем контейнер */
+}
+
+/* Анимация сердец по кругу */
+@keyframes rotateHearts {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Плавающие сердца */
+.heart-floating {
+    position: absolute;
+    font-size: 50px;
+    color: #ff0000;
+    animation: rotateHearts 12s linear infinite;
+    opacity: 0.8;
+    transition: color 1s ease-in-out; /* Плавное изменение цвета сердец */
+}
+
+/* Множество сердец с разными позициями */
+.heart-floating:nth-child(1) {
+    top: 0%;
+    left: 50%;
+    animation-duration: 12s;
+    animation-delay: 0s;
+}
+
+.heart-floating:nth-child(2) {
+    top: 25%;
+    left: 75%;
+    animation-duration: 14s;
+    animation-delay: 2s;
+}
+
+.heart-floating:nth-child(3) {
+    top: 50%;
+    left: 100%;
+    animation-duration: 13s;
+    animation-delay: 3s;
+}
+
+.heart-floating:nth-child(4) {
+    top: 75%;
+    left: 75%;
+    animation-duration: 11s;
+    animation-delay: 1s;
+}
+
+.heart-floating:nth-child(5) {
+    top: 100%;
+    left: 50%;
+    animation-duration: 10s;
+    animation-delay: 4s;
+}
+
+.heart-floating:nth-child(6) {
+    top: 75%;
+    left: 25%;
+    animation-duration: 13s;
+    animation-delay: 5s;
+}
+
+.heart-floating:nth-child(7) {
+    top: 50%;
+    left: 0%;
+    animation-duration: 12s;
+    animation-delay: 6s;
+}
+
+.heart-floating:nth-child(8) {
+    top: 25%;
+    left: 25%;
+    animation-duration: 14s;
+    animation-delay: 7s;
+}
+
+.heart-floating:nth-child(9) {
+    top: 0%;
+    left: 50%;
+    animation-duration: 15s;
+    animation-delay: 8s;
+}
+
+/* Плавное движение облаков */
+.clouds {
+    position: absolute;
+    top: -50px;
+    left: -150px;
+    width: 200px;
+    height: 120px;
+    background: url('cloud.png') repeat-x;
+    animation: moveClouds 30s linear infinite;
+    opacity: 0.5;
+    transition: opacity 1s ease-in-out; /* Плавное изменение прозрачности облаков */
+}
+
+@keyframes moveClouds {
+    0% { left: -150px; }
+    100% { left: 100%; }
+}
+
+.music-controls {
+    margin-top: 30px;
+}
+
+.music-button {
+    background-color: #ff66b2;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Плавные изменения для кнопок */
+    font-weight: bold;
+}
+
+.music-button:hover {
+    background-color: #ff3385;
+}
+
+.music-button:active {
+    background-color: #cc2976;
+}
+
+.music-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
